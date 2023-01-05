@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link href="/static/css/bootstrap.css" th:href="@{/css/bootstrap.css}" rel="stylesheet"/>
+    <link href="/static/css/training.css" th:href="@{/css/training.css}" rel="stylesheet"/>
+    <title>ItemDetail</title>
+</head>
+
+<body>
+<h1 class="text-primary">商品詳細</h1>
+<br>
+<br>
+<h4 class="text-primary">商品情報</h4>
+<br>
+<table class="table table-striped">
+    <thead>
+    <th>商品名</th>
+    </thead>
+    <tbody>
+    <tr>
+        <td th:text="${item.name}"></td>
+    </tr>
+    </tbody>
+</table>
+<table class="table table-striped">
+    <thead>
+    <th>値段</th>
+    </thead>
+    <tbody>
+    <tr>
+        <td th:text="${item.price}"></td>
+    </tr>
+    </tbody>
+</table>
+<form method="post" th:action="@{/delete/do}">
+    <input type="submit" value="削除">
+    <input type="hidden" name="id" th:value="${item.id}">
+</form>
+<form method="post" th:action="@{/update/init}">
+    <input type="submit" value="編集">
+    <input type="hidden" name="id" th:value="${item.id}">
+</form>
+<br>
+<br>
+<a th:href="@{'/'}"><h5 class="text-primary">TOP</h5></a>
+
+
+
+</body>
+</html>

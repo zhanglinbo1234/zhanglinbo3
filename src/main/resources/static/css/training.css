@@ -1,0 +1,15 @@
+h2#orange {
+    color: orange;
+}
+
+div.form-group.required label:after {
+    content: "*";
+    color: red;
+}
+
+.omit-letters {
+    max-width: 500px;
+    white-space: nowrap; /* 横幅のMAXに達しても改行しない */
+    overflow: hidden; /* ハミ出した部分を隠す */
+    text-overflow: ellipsis; /* 「…」と省略 */
+}
